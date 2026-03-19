@@ -1,0 +1,8 @@
+diabetes_venv/
+pycache/
+*.pyc
+.env
+*.keras
+*.npy
+*.pkl
+*.csv

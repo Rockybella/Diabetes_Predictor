@@ -5,6 +5,8 @@ matplotlib
 seaborn
 scikit-learn
 mealpy
-#joblib
-#imbalanced-learn
-#plotly
+joblib
+imbalanced-learn
+plotly
+tensorflow
+shap
