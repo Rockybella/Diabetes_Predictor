@@ -4,9 +4,7 @@ numpy
 matplotlib
 seaborn
 scikit-learn
-mealpy
 joblib
 imbalanced-learn
-plotly
-tensorflow
+tensorflow-cpu
 shap
