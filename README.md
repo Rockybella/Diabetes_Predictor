@@ -5,6 +5,8 @@ This app is located at :           https://diabetespredictor-raquel.streamlit.ap
 
 
 
+***
+
 REFERENCES:
 
 Naz H, Ahuja S. Deep learning approach for diabetes prediction using PIMA Indian dataset. J Diabetes Metab Disord. 2020 Apr 14;19(1):391-403. doi: 10.1007/s40200-020-00520-5. PMID: 32550190; PMCID: PMC7270283.
