@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
         # 1. Ingest Data - Capture all 5 paths returned by your script
         ingestion = DataIngestion()
-        X_train_path, X_test_path, y_train_path, y_test_path, raw_path = (
+        X_train_path, X_test_path, y_train_path, y_test_path = (
             ingestion.initiate_data_ingestion()
         )
 
@@ -142,7 +142,6 @@ if __name__ == "__main__":
             X_test_path=X_test_path,
             y_train_path=y_train_path,
             y_test_path=y_test_path,
-            raw_data_path=raw_data_patch,
         )
 
         # 3. Train Model

@@ -53,8 +53,6 @@ class DataIngestion:
                 "Age",
                 "Class",
             ]
-            # Note: Your notebook used different names (Plas, Pres, etc).
-            # I used standard Pima names here; change them if your CSV headers differ!
 
             logging.info("Replacing zero values with median")
             for col in cols_to_fix:

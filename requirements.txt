@@ -1,5 +1,6 @@
 streamlit
 pandas
+dill
 numpy<2.0
 matplotlib
 seaborn
@@ -7,3 +8,4 @@ scikit-learn
 joblib
 tensorflow-cpu
 shap
+-e .
