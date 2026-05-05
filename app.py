@@ -15,8 +15,7 @@ st.set_page_config(page_title="Diabetes Predictor", layout="wide", page_icon="�
 # --- LOAD ASSETS ---
 @st.cache_resource
 def load_assets():
-    # Loading all artifacts exported from your notebook
-    # Ensure these files are in the same folder as app.py
+ 
     model = tf.keras.models.load_model("diabetes_model.keras")
     scaler = joblib.load("scaler.pkl")
     X_test_scaled = np.load("X_test_scaled.npy")
@@ -27,7 +26,6 @@ def load_assets():
     return model, scaler, X_test_scaled, history_dict, y_test, y_prob
 
 try:
-    # Unpacking all 6 items returned by load_assets
     model, scaler, X_test_scaled, history, y_test, y_prob = load_assets()
 except Exception as e:
     st.error(f"⚠️ Error loading files: {e}")
@@ -122,12 +120,12 @@ if st.button("🚀 Run Diagnostic Analysis"):
             st.pyplot(fig_roc)
 
     with tab2:
-        st.write("**Feature Impact Analysis (SHAP)**")
+        st.write("**Feature Impact Analysis**")
         # Explaining the prediction for the current input
         explainer = shap.Explainer(model, X_test_scaled)
         shap_values = explainer(input_scaled)
         
-        # Defining names for the SHAP plot
+        
         feature_names = [
             'Pregnancies', 'Glucose', 'Blood Pressure', 'Skin Thickness', 
             'Insulin', 'BMI', 'Diabetes Pedigree Function', 'Age'
@@ -135,7 +133,7 @@ if st.button("🚀 Run Diagnostic Analysis"):
         shap_values.feature_names = feature_names
 
         fig_shap, ax_shap = plt.subplots(figsize=(10, 5))
-        # Visualizing index 1 for Diabetes Class
+        
         shap.plots.bar(shap_values[0, :, 1], show=False)
         st.pyplot(fig_shap)
         st.caption("Right (Positive): Feature increased risk | Left (Negative): Feature decreased risk.")
@@ -144,7 +142,7 @@ if st.button("🚀 Run Diagnostic Analysis"):
         st.write("**Global Dataset Trends (PIMA Indians)**")
         
         try:
-            # Load the local CSV instead of a URL
+            # Load CSV 
             df_raw = pd.read_csv("diabetes_raw.csv")
             
             # Create a 2x4 grid for the 8 features
