@@ -34,7 +34,7 @@ class DataIngestion:
         logging.info("Entered the data ingestion method or component")
         try:
             # 1. Read the dataset
-            # Ensure 'diabetes.csv' is in your 'notebook' folder
+        
             df = pd.read_csv(
                 self.ingestion_config.url, names=self.ingestion_config.names
             )
