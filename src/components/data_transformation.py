@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    # This is where your scaler (preprocessor) will be saved
+   
     preprocessor_obj_file_path: str = os.path.join("artifacts", "preprocessor.pkl")
 
 
@@ -25,9 +25,7 @@ class DataTransformation:
         self.data_transformation_config = DataTransformationConfig()
 
     def get_data_transformer_object(self):
-        """
-        This function creates the scaling object
-        """
+        
         try:
             scaler = StandardScaler()
 
@@ -62,7 +60,7 @@ class DataTransformation:
 
             preprocessing_obj = self.get_data_transformer_object()
 
-            # IMPORTANT: Ensure 'Class' matches the header in your CSV
+            
             target_column_name = "Class"
 
             # Separate Features and Target
